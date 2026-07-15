@@ -3,23 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Webinar Registration</title>
+    <title>Webinar App</title>
 
-    <!-- Favicon (optional) -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
-
-    <!-- Meta description -->
-    <meta
-      name="description"
-      content="A React-based webinar registration app with clean UI and instant lobby access."
-    />
+    <!-- Load React and Babel from CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   </head>
 
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
-    <!-- React bundle will be injected here -->
-    <script type="module" src="./index.js"></script>
+    <!-- Link your React code -->
+    <script type="text/babel" src="index.js"></script>
   </body>
 </html>
