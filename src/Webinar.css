@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+  color: #222;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.event-header {
+  background: linear-gradient(135deg, #002f6c, #005eb8);
+  color: #ffffff;
+  padding: 60px 0;
+}
+
+.event-header h1 {
+  margin: 0 0 12px;
+  font-size: 38px;
+  line-height: 1.2;
+}
+
+.event-header p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 32px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.event-details,
+.registration-box,
+.lobby-box {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.event-details h2,
+.registration-box h2,
+.lobby-box h2 {
+  margin-top: 0;
+  color: #002f6c;
+  font-size: 26px;
+}
+
+.event-details p,
+.lobby-box p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333333;
+}
+
+.event-meta {
+  margin-top: 24px;
+  padding: 18px;
+  background: #eef4ff;
+  border-left: 4px solid #005eb8;
+  border-radius: 6px;
+}
+
+.event-meta p {
+  margin: 8px 0;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 15px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #005eb8;
+  box-shadow: 0 0 0 2px rgba(0, 94, 184, 0.15);
+}
+
+.checkbox-group {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 18px 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.checkbox-group input {
+  margin-top: 3px;
+}
+
+.register-btn {
+  width: 100%;
+  background: #005eb8;
+  color: #ffffff;
+  border: none;
+  padding: 13px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.register-btn:hover {
+  background: #004a91;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #ffffff;
+  color: #555555;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    grid-template-columns: 1fr;
+  }
+
+  .event-header h1 {
+    font-size: 28px;
+  }
+
+  .event-header {
+    padding: 40px 0;
+  }
+
+  .event-details,
+  .registration-box,
+  .lobby-box {
+    padding: 24px;
+  }
+}
