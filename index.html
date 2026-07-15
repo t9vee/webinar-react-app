@@ -14,8 +14,16 @@
   <body>
     <!-- Root element where React will render -->
     <div id="root"></div>
-<script type="text/babel">
+
+    <script type="text/babel">
   function App() {
+    const [isRegistered, setIsRegistered] = React.useState(false);
+
+    const handleSubmit = (e) => {
+      e.preventDefault(); // prevent page reload
+      setIsRegistered(true); // switch to success message
+    };
+
     return (
       <div style={{ fontFamily: "Arial, sans-serif", backgroundColor: "#f5f7fa" }}>
         <header style={{ backgroundColor: "#0056b3", color: "white", padding: "30px 0", textAlign: "center" }}>
@@ -35,26 +43,35 @@
           </div>
 
           <div style={{ backgroundColor: "white", padding: "30px", borderRadius: "10px", width: "400px" }}>
-            <h2>Register Now</h2>
-            <form>
-              <input type="text" placeholder="First Name *" style={{ width: "100%", marginBottom: "10px", padding: "8px" }} />
-              <input type="text" placeholder="Last Name *" style={{ width: "100%", marginBottom: "10px", padding: "8px" }} />
-              <input type="email" placeholder="Email Address *" style={{ width: "100%", marginBottom: "10px", padding: "8px" }} />
-              <input type="text" placeholder="Company *" style={{ width: "100%", marginBottom: "10px", padding: "8px" }} />
-              <input type="text" placeholder="Job Title" style={{ width: "100%", marginBottom: "10px", padding: "8px" }} />
-              <select style={{ width: "100%", marginBottom: "10px", padding: "8px" }}>
-                <option>Select Country</option>
-                <option>India</option>
-                <option>USA</option>
-                <option>UK</option>
-              </select>
-              <label>
-                <input type="checkbox" /> I agree to receive communications related to this webinar.
-              </label>
-              <button type="submit" style={{ width: "100%", marginTop: "15px", padding: "10px", backgroundColor: "#0056b3", color: "white", border: "none", borderRadius: "5px" }}>
-                Register
-              </button>
-            </form>
+            {!isRegistered ? (
+              <>
+                <h2>Register Now</h2>
+                <form onSubmit={handleSubmit}>
+                  <input type="text" placeholder="First Name *" style={{ width: "100%", marginBottom: "10px", padding: "8px" }} required />
+                  <input type="text" placeholder="Last Name *" style={{ width: "100%", marginBottom: "10px", padding: "8px" }} required />
+                  <input type="email" placeholder="Email Address *" style={{ width: "100%", marginBottom: "10px", padding: "8px" }} required />
+                  <input type="text" placeholder="Company *" style={{ width: "100%", marginBottom: "10px", padding: "8px" }} required />
+                  <input type="text" placeholder="Job Title" style={{ width: "100%", marginBottom: "10px", padding: "8px" }} />
+                  <select style={{ width: "100%", marginBottom: "10px", padding: "8px" }} required>
+                    <option>Select Country</option>
+                    <option>India</option>
+                    <option>USA</option>
+                    <option>UK</option>
+                  </select>
+                  <label>
+                    <input type="checkbox" required /> I agree to receive communications related to this webinar.
+                  </label>
+                  <button type="submit" style={{ width: "100%", marginTop: "15px", padding: "10px", backgroundColor: "#0056b3", color: "white", border: "none", borderRadius: "5px" }}>
+                    Register
+                  </button>
+                </form>
+              </>
+            ) : (
+              <div style={{ textAlign: "center", marginTop: "50px" }}>
+                <h2>🎉 You are now registered for this webinar!</h2>
+                <p>Thank you for signing up. A confirmation email will be sent to you shortly.</p>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -64,6 +81,7 @@
   const root = ReactDOM.createRoot(document.getElementById("root"));
   root.render(<App />);
 </script>
+
 
   </body>
 </html>
